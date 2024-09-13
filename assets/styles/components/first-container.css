@@ -1,0 +1,49 @@
+#first-container {
+  span {
+    font: var(--overline);
+    background-image: linear-gradient(to right, var(--gradient-content));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  h1 {
+    font: var(--display-large);
+    text-transform: uppercase;
+    color: var(--content-primary);
+  }
+
+  ul {
+    width: 100%;
+    max-width: 38.6rem;
+    list-style-type: none;
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    gap: 3.6rem;
+    margin-block-start: 3.8rem;
+
+    h3 {
+      margin-left: 2.8rem;
+      color: var(--content-brand);
+      font: var(--paragraph-medium);
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 2rem;
+        height: 2rem;
+        background-image: url("../../icons/person-talking.svg");
+        display: block;
+        position: absolute;
+        left: -2.8rem;
+      }
+    }
+
+    p {
+      margin-left: 2.8rem;
+      font: var(--paragraph-small);
+      color: var(--content-secondary);
+    }
+  }
+}

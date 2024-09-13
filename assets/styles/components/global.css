@@ -1,0 +1,59 @@
+*,
+*::before, 
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --ff-roboto-flex: "Roboto Flex", sans-serif;
+  --ff-roboto-mono: "Roboto Mono", monospace;
+  --ff-sora: "Sora", sans-serif;
+
+  --display-large: 800 7.2rem/130% var(--ff-sora);
+  --display-medium: 800 4rem/130% var(--ff-sora);
+  --display-small: 700 3.2rem/130% var(--ff-sora);
+
+  --overline: 700 1.6rem/150% var(--ff-roboto-mono);
+
+  --paragraph-large: 500 1.6rem/150% var(--ff-roboto-flex);
+  --paragraph-medium: 500 1.4rem/150% var(--ff-roboto-flex);
+  --paragraph-small: 500 1.2rem/150% var(--ff-roboto-flex);
+  --label-medium: 700 2rem/150% var(--ff-roboto-flex);
+  --label-small: 700 1.6rem/150% var(--ff-roboto-flex);
+
+  /* ===== COLORS ===== */
+  --content-primary: #FFFFFF;
+  --content-secondary: #C7C9CC;
+  --content-tertiary: #D9D9D9;
+  --content-brand: #C58DE7;
+  --color-inverse: #030203;
+
+  --background-primary: #020202;
+  --background-secondary: #111012;
+  --background-tertiary: #24222E;
+  --background-brand: #C58DE7;
+  --background-gray: #3D3D3D;
+
+  --accent-pink: #D586E0;
+  --accent-blue: #91A1FA;
+  --accent-green: #77C0AF;
+  --accent-lime: #D1DC97;
+  --accent-red: #E9A9B3;
+
+  --gradient-border: #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%;
+  --gradient-background: #D586E0 0%, #91A1FA 98.93%;
+  --gradient-content: #C7C9CC 0%, #3D3D3D 100%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--background-primary);
+}
+
+.flex {
+  display: flex;
+}

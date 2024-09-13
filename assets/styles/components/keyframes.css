@@ -1,0 +1,30 @@
+@keyframes hideScreen {
+  from {
+    opacity: 1;
+  } to {
+    opacity: 0;
+  }
+}
+
+.hidden {
+  animation-name: hideScreen;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes displayScreen {
+  from {
+    opacity: 0;
+    z-index: -1;
+  } to {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+.show {
+  animation-name: displayScreen;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-delay: 500ms;
+}

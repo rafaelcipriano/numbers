@@ -1,0 +1,18 @@
+@import url("first-container.css");
+@import url("second-container.css");
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10.8rem;
+
+  width: 100%;
+  padding-inline: 12rem;
+}
+
+@media screen and (max-width: 450px) {
+  main {
+    grid-template-columns: 1fr;
+    padding-inline: 6rem;
+  }
+}
