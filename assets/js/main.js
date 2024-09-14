@@ -98,11 +98,21 @@ function handleFormSubmit(event) {
 
 // Exibe os números gerados
 function displayGeneratedNumbers(numbers) {
-  numbers.forEach((number) => {
-    const listItem = document.createElement('li');
-    listItem.innerText = number;
-    generatedNumbersList.appendChild(listItem);
-  });
+  let index = 0;
+
+  // Função recursiva para adicionar números à lista
+  function addNumber() {
+    if (index < numbers.length) {
+      const listItem = document.createElement('li');
+      listItem.textContent = numbers[index];
+      generatedNumbersList.appendChild(listItem);
+      index++;
+      setTimeout(addNumber, 5000); // Chama a função novamente após 5 segundos
+    }
+  }
+
+  // Inicia a adição dos números
+  addNumber();
 }
 
 // Inicializa a aplicação
