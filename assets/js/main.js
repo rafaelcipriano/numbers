@@ -25,14 +25,8 @@ function initialize() {
   enforceNumericInput(startInput);
   enforceNumericInput(endInput);
 
-  allowRepetitionCheckbox.addEventListener('click', toggleCheckbox);
   resetButton.addEventListener('click', resetApplication);
   formElement.addEventListener('submit', handleFormSubmit);
-}
-
-// Alterna o estado do checkbox de repetição
-function toggleCheckbox() {
-  allowRepetitionCheckbox.checked = !allowRepetitionCheckbox.checked;
 }
 
 // Gera números aleatórios, com ou sem repetição
@@ -42,7 +36,7 @@ function generateRandomNumber(min, max) {
   const maximum = Number(max);
   let randomNumber;
 
-  if (allowRepetition) {
+  if (!allowRepetition) {
     if (generatedNumbersSet.size >= (maximum - minimum + 1)) {
       throw new Error('Todos os números possíveis já foram gerados!');
     }
@@ -63,7 +57,7 @@ function generateRandomNumbers(amount, min, max) {
   const quantity = Number(amount);
   const rangeSize = Number(max) - Number(min) + 1;
 
-  if (allowRepetitionCheckbox.checked && quantity > rangeSize) {
+  if (!allowRepetitionCheckbox.checked && quantity > rangeSize) {
     throw new Error('A quantidade solicitada excede o número de valores possíveis sem repetição!');
   }
 
@@ -80,6 +74,7 @@ function resetApplication() {
   quantityInput.value = '';
   startInput.value = '';
   endInput.value = '';
+  allowRepetitionCheckbox.checked = false;
 
   while (generatedNumbersList.firstChild) {
     generatedNumbersList.removeChild(generatedNumbersList.firstChild);
